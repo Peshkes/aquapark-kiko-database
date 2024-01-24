@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  db_aquapark:
+    container_name: db_aquapark
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=aquaroot
+      - POSTGRES_USER=aquaadmin
+      - POSTGRES_DB=aquapark-kiko
+    image: postgres:15.5
+    volumes:
+      - ./data:/var/lib/postgresql/data
